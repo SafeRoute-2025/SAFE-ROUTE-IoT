@@ -93,5 +93,15 @@ Essa abordagem foi escolhida para ilustrar de forma didática e funcional como u
    - Serve como base para sistemas reais de alerta em situações de risco como enchentes.
    - Pode ser expandido para outros sensores e atuadores, aumentando a segurança e automação.
 
+## ⚙️ Arquitetura do Sistema
+
+![Diagrama de Arquitetura do Projeto](https://github.com/SafeRoute-2025/SAFE-ROUTE-IoT/raw/main/imgs/arquitetura_projeto.png)
+
+**Fluxo de Dados:**
+1. Sensores simulados no Wokwi
+2. Dados enviados via ESP32
+3. Broker MQTT (test.mosquitto.org)
+4. Processamento no Node-RED
+5. Visualização no Dashboard
 
 
