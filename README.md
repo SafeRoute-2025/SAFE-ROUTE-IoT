@@ -43,7 +43,7 @@ Essa abordagem foi escolhida para ilustrar de forma didática e funcional como u
 
 ### Node-RED
 
-1. Abra o CMD e digite ```bash node-red ```
+1. Abra o CMD e digite ```node-red ```
 1. Importe o fluxo do arquivo `flow_node_red.json`
 2. Configure o broker MQTT (exemplo usado: test.mosquitto.org)
 3. Utilize a porta 1883
