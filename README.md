@@ -20,6 +20,10 @@ Essa abordagem foi escolhida para ilustrar de forma didática e funcional como u
 
 ## Imagens do Projeto
 
+## Link do vídeo 
+
+https://youtu.be/FIq3crhJuA0
+
 ### ESP32 e sensores simulados
 ![ESP32 com sensores simulados](imgs/esp32.png)
 
