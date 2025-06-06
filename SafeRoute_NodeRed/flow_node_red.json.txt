@@ -1,0 +1,145 @@
+[
+    {
+        "id": "e9189a2a03ddafe6",
+        "type": "tab",
+        "label": "Fluxo 5",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ffc7fa24b0060fde",
+        "type": "mqtt in",
+        "z": "e9189a2a03ddafe6",
+        "name": "MQTT Chuva",
+        "topic": "projeto/chuva",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "inputs": 0,
+        "x": 90,
+        "y": 80,
+        "wires": [
+            [
+                "eada2cbb39d53f29"
+            ]
+        ]
+    },
+    {
+        "id": "a7a62e7bfa36f410",
+        "type": "mqtt in",
+        "z": "e9189a2a03ddafe6",
+        "name": "MQTT Água",
+        "topic": "projeto/nivelagua",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "inputs": 0,
+        "x": 90,
+        "y": 160,
+        "wires": [
+            [
+                "5253406503712b8f"
+            ]
+        ]
+    },
+    {
+        "id": "eada2cbb39d53f29",
+        "type": "ui_gauge",
+        "z": "e9189a2a03ddafe6",
+        "name": "Nível Chuva",
+        "group": "dashboard_group",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Intensidade da Chuva",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 100,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": 50,
+        "seg2": 75,
+        "x": 350,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "5253406503712b8f",
+        "type": "ui_gauge",
+        "z": "e9189a2a03ddafe6",
+        "name": "Nível da Água (%)",
+        "group": "dashboard_group",
+        "order": 2,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Nível da Água",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 100,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": 50,
+        "seg2": 75,
+        "x": 330,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "mqtt_broker",
+        "type": "mqtt-broker",
+        "name": "Mosquitto Public Broker",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "dashboard_group",
+        "type": "ui_group",
+        "name": "Sensores e Controle",
+        "tab": "dashboard_tab",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "dashboard_tab",
+        "type": "ui_tab",
+        "name": "Dashboard IoT",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
