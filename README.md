@@ -40,11 +40,6 @@ Sistema IoT para monitoramento do nível de água e intensidade da chuva utiliza
 - Processamento para acionar alerta quando nível de água > 75%
 - Dashboard para mostrar dados em tempo real e status do LED
 
-## Imagens
-
-
----
-
 ## Autores
 
 - RM553542 Luiz Otávio Leitão Silva - 2TDSPR
