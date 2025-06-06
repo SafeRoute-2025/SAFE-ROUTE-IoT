@@ -34,7 +34,7 @@ Essa abordagem foi escolhida para ilustrar de forma didática e funcional como u
 
 ## Link do vídeo 
 
-Link do vídeo explicando a solução e mostrando o funcionamneto da solução.
+Mostrando a solução e explicando o projeto.
 
 - https://youtu.be/FIq3crhJuA0
 
