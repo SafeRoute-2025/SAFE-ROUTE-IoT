@@ -18,30 +18,44 @@ Quando o nível da água ultrapassa 75%, o sistema aciona um LED no simulador e 
 
 Essa abordagem foi escolhida para ilustrar de forma didática e funcional como uma solução baseada em IoT pode ser aplicada para monitoramento ambiental e emissão automatizada de alertas de risco, integrando hardware, protocolos de comunicação e visualização em tempo real.
 
-## Hardware 
+## Integrantes
 
-- ESP32 (simulado no Wokwi ou hardware real)
-- 2 potenciômetros (simulando sensores de nível de água e chuva)
-- LED conectado ao pino 26
+- RM553542 Luiz Otávio Leitão Silva - 2TDSPR
+- RM553748 Mauricio Vieira Pereira - 2TDSPC
+- RM553483 Vitor de Melo Marques - 2TDSPR
 
-## Software
+  graph TD
+    A[Sensores Simulados] -->|Dados| B(ESP32)
+    B -->|MQTT| C[Broker Mosquitto]
+    C --> D[Node-RED]
+    D --> E[Dashboard]
+    D --> F[Alertas]
 
-- Código Arduino para ESP32
-- Node-RED para gateway e dashboard com MQTT
+## Tecnologias Utilizadas 
+
+- Wokwi (Simulador de Arduino/ESP32)
+- ESP32
+- Node-RED
+- Node-RED Dashboard
+- MQTT Broker
 
 ## Configuração e Execução
 
-### Arduino
+### Wokwi
 
-1. Utilize a rede WiFi que está no `esp32_agua_chuva.ino`
-2. Compile e envie para o ESP32
-3. Verifique no monitor serial as leituras de "Chuva" e "Nível de Água"
+1. Instale as bibliotecas 'WiFi' e 'PubSubClient' 
+2. Utilize a rede WiFi 'Wokwi-GUEST' e senha ''
+3. Compile e envie para o ESP32
+4. Verifique no monitor serial as leituras de "Chuva" e "Nível de Água"
 
 ### Node-RED
 
+1. Abra o CMD e digite 
 1. Importe o fluxo do arquivo `flow_node_red.json`
 2. Configure o broker MQTT (exemplo usado: test.mosquitto.org)
-3. Abra o dashboard para visualizar os dados e receber alertas
+3. Utilize a porta 1883
+4. Rode o projeto no Node-RED
+5. Abra o dashboard para visualizar os dados e receber alertas
 
 ## Fluxo Node-RED
 
@@ -49,9 +63,5 @@ Essa abordagem foi escolhida para ilustrar de forma didática e funcional como u
 - Processamento para acionar alerta quando nível de água > 75%
 - Dashboard para mostrar dados em tempo real e status do LED
 
-## Autores
 
-- RM553542 Luiz Otávio Leitão Silva - 2TDSPR
-- RM553748 Mauricio Vieira Pereira - 2TDSPC
-- RM553483 Vitor de Melo Marques - 2TDSPR
 
