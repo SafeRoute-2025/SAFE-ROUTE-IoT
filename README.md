@@ -57,5 +57,33 @@ Essa abordagem foi escolhida para ilustrar de forma didática e funcional como u
 - Processamento para acionar alerta quando nível de água > 75%
 - Dashboard para mostrar dados em tempo real e status do LED
 
+## Lógica da Execução do Projeto SafeRoute
+
+1. **Leitura dos Sensores no ESP32:**
+   - O ESP32 está conectado a dois potenciômetros que simulam dois sensores:
+     - **Sensor de chuva**: Representa o índice de chuva. Não dispara alertas diretamente, mas influencia o comportamento do sistema.
+     - **Sensor de nível de água**: Mede o percentual do nível da água acumulada.
+   - O ESP32 lê os valores analógicos dos potenciômetros periodicamente.
+
+2. **Envio dos Dados via MQTT:**
+   - O ESP32 envia os valores lidos dos sensores para um broker MQTT, em tópicos específicos, usando o protocolo MQTT e formato JSON.
+   - Isso permite comunicação eficiente e padronizada com o gateway.
+
+3. **Recepção e Processamento dos Dados no Node-RED:**
+   - O Node-RED atua como gateway, recebendo as mensagens MQTT dos sensores.
+   - Ele extrai os valores e processa a lógica de alerta:
+     - A chuva é apenas um indicador para mostrar que o nível da água pode subir.
+     - Quando o nível de água ultrapassa 75%, o Node-RED aciona o LED virtual no dashboard para alertar o usuário.
+
+4. **Dashboard para Visualização em Tempo Real:**
+   - Os dados de chuva e nível de água são exibidos em um painel gráfico e numérico.
+   - O LED no dashboard acende automaticamente quando o nível da água está acima do limite crítico (75%).
+   - Isso oferece uma interface visual simples e intuitiva para monitoramento.
+
+5. **Funcionalidade Prática:**
+   - O sistema simula a detecção de condições críticas em tempo real.
+   - Serve como base para sistemas reais de alerta em situações de risco como enchentes.
+   - Pode ser expandido para outros sensores e atuadores, aumentando a segurança e automação.
+
 
 
