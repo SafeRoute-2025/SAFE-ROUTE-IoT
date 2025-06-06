@@ -42,10 +42,12 @@ Sistema IoT para monitoramento do nível de água e intensidade da chuva utiliza
 
 ## Imagens
 
-- `imagens/diagrama_iot.png` - Esquema básico do hardware e fluxo de dados
 
 ---
 
-## Autor
+## Autores
 
-Seu Nome - Data
+RM553542 Luiz Otávio Leitão Silva - 2TDSPR
+RM553748 Mauricio Vieira Pereira - 2TDSPC
+RM553483 Vitor de Melo Marques - 2TDSPR
+
