@@ -49,7 +49,7 @@ Essa abordagem foi escolhida para ilustrar de forma didática e funcional como u
 2. Configure o broker MQTT (exemplo usado: test.mosquitto.org)
 3. Utilize a porta 1883
 4. Rode o projeto no Node-RED
-5. Abra o dashboard ```http://localhost:1880/ui/``` para visualizar os dados e receber alertas
+5. Abra o dashboard ```http://localhost:1880/ui/``` no navegador, para visualizar os dados e receber alertas
 
 ## Fluxo Node-RED
 
