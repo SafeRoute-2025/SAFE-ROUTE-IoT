@@ -1,8 +1,22 @@
 # SAFE-ROUTE-IoT
 
+Sistema IoT para monitoramento do nível de água e intensidade da chuva utilizando ESP32 e sensores simulados. Os dados são enviados via MQTT para o Node-RED, que exibe um dashboard em tempo real.
+
 ## Descrição
 
-Sistema IoT para monitoramento do nível de água e intensidade da chuva utilizando ESP32 e sensores simulados. Os dados são enviados via MQTT para o Node-RED, que exibe um dashboard em tempo real.
+Este projeto faz parte da solução SafeRoute — uma plataforma de alertas inteligentes e evacuação segura. O objetivo da SafeRoute é otimizar a comunicação e organizar rotas seguras de evacuação durante eventos climáticos extremos, como enchentes e tempestades severas.
+
+Para demonstrar um exemplo funcional desse conceito, desenvolvemos um protótipo IoT que simula a medição de níveis de chuva e água, com acionamento de um alerta visual (LED) quando a situação atinge níveis críticos.
+
+O sistema utiliza sensores simulados (potenciômetros no Wokwi) para representar a intensidade da chuva e o nível da água. Esses dados são enviados via protocolo MQTT para um broker e exibidos em tempo real em um dashboard no Node-RED.
+
+A lógica funciona da seguinte forma:
+
+A leitura da chuva é apenas informativa, simulando o aumento potencial do nível da água.
+
+Quando o nível da água ultrapassa 75%, o sistema aciona um LED no simulador e exibe a informação no painel do dashboard, simulando um alerta visual de perigo ou evacuação.
+
+Essa abordagem foi escolhida para ilustrar de forma didática e funcional como uma solução baseada em IoT pode ser aplicada para monitoramento ambiental e emissão automatizada de alertas de risco, integrando hardware, protocolos de comunicação e visualização em tempo real.
 
 # Projeto IoT - Monitoramento de Nível de Água e Chuva
 
