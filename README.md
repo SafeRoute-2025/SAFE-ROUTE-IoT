@@ -24,12 +24,12 @@ Essa abordagem foi escolhida para ilustrar de forma didática e funcional como u
 - RM553748 Mauricio Vieira Pereira - 2TDSPC
 - RM553483 Vitor de Melo Marques - 2TDSPR
 
-  graph TD
-    A[Sensores Simulados] -->|Dados| B(ESP32)
-    B -->|MQTT| C[Broker Mosquitto]
-    C --> D[Node-RED]
-    D --> E[Dashboard]
-    D --> F[Alertas]
+graph TD
+  A[Sensores Simulados] -->|Dados| B(ESP32)
+  B -->|MQTT| C[Broker Mosquitto]
+  C --> D[Node-RED]
+  D --> E[Dashboard]
+  E --> F[Alertas]
 
 ## Tecnologias Utilizadas 
 
