@@ -47,7 +47,7 @@ Sistema IoT para monitoramento do nível de água e intensidade da chuva utiliza
 
 ## Autores
 
-RM553542 Luiz Otávio Leitão Silva - 2TDSPR
-RM553748 Mauricio Vieira Pereira - 2TDSPC
-RM553483 Vitor de Melo Marques - 2TDSPR
+- RM553542 Luiz Otávio Leitão Silva - 2TDSPR
+- RM553748 Mauricio Vieira Pereira - 2TDSPC
+- RM553483 Vitor de Melo Marques - 2TDSPR
 
