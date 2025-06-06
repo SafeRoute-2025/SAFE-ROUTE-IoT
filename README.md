@@ -20,10 +20,6 @@ Essa abordagem foi escolhida para ilustrar de forma didática e funcional como u
 
 ## Imagens do Projeto
 
-## Link do vídeo 
-
-https://youtu.be/FIq3crhJuA0
-
 ### ESP32 e sensores simulados
 ![ESP32 com sensores simulados](imgs/esp32.png)
 
@@ -96,6 +92,10 @@ https://youtu.be/FIq3crhJuA0
    - O sistema simula a detecção de condições críticas em tempo real.
    - Serve como base para sistemas reais de alerta em situações de risco como enchentes.
    - Pode ser expandido para outros sensores e atuadores, aumentando a segurança e automação.
+
+## Link do vídeo 
+
+https://youtu.be/FIq3crhJuA0
 
 ## Arquitetura do Sistema
 
