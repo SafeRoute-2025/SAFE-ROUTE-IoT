@@ -18,6 +18,8 @@ Quando o nível da água ultrapassa 75%, o sistema aciona um LED no simulador e 
 
 Essa abordagem foi escolhida para ilustrar de forma didática e funcional como uma solução baseada em IoT pode ser aplicada para monitoramento ambiental e emissão automatizada de alertas de risco, integrando hardware, protocolos de comunicação e visualização em tempo real.
 
+## Imagens do Projeto
+
 ### ESP32 e sensores simulados
 ![ESP32 com sensores simulados](imgs/esp32.png)
 
