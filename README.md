@@ -9,7 +9,7 @@ Sistema IoT para monitoramento do nível de água e intensidade da chuva utiliza
 - Quando o nível de água ultrapassa 75%, um LED é acionado como alerta.
 - A intensidade da chuva é usada para indicar a possibilidade do aumento do nível de água.
 
-## Hardware ()
+## Hardware 
 
 - ESP32 (simulado no Wokwi ou hardware real)
 - 2 potenciômetros (simulando sensores de nível de água e chuva)
