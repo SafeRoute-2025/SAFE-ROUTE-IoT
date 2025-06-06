@@ -1,0 +1,109 @@
+#include <WiFi.h>
+#include <PubSubClient.h>
+
+// WiFi Credentials
+const char* ssid = "Wokwi-GUEST";
+const char* password = "";
+
+// MQTT Broker
+const char* mqttServer = "test.mosquitto.org";
+const int mqttPort = 1883;
+const char* mqttUser = "aaaa";
+const char* mqttPassword = "aaaa";
+
+// Definição dos pinos
+#define ADCpinChuva 36   // Potenciômetro no VP - Intensidade de Chuva
+#define ADCpinAgua  39   // Potenciômetro - Nível de Água
+#define LED         26   // LED
+
+WiFiClient espClient;
+PubSubClient client(espClient);
+
+int NivelAgua;
+int Chuva;
+
+void setup() {
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Connecting to WiFi...");
+  }
+  Serial.println("Connected to WiFi");
+
+  client.setServer(mqttServer, mqttPort);
+  client.setCallback(callback);
+
+  while (!client.connected()) {
+    Serial.println("Connecting to MQTT...");
+    if (client.connect("userid")) {
+      Serial.println("Connected to MQTT");
+      client.subscribe("LED");
+    } else {
+      Serial.print("Failed with state ");
+      Serial.print(client.state());
+      delay(2000);
+    }
+  }
+
+  pinMode(LED, OUTPUT);
+}
+
+void loop() {
+  // Leitura dos potenciômetros
+  int leituraChuva = analogRead(ADCpinChuva);
+  int leituraAgua  = analogRead(ADCpinAgua);
+
+  Chuva     = map(leituraChuva, 0, 4095, 0, 100);
+  NivelAgua = map(leituraAgua,  0, 4095, 0, 100);
+
+  // Exibe no Serial Monitor
+  Serial.print("Chuva: ");
+  Serial.print(Chuva);
+  Serial.print(" | Nível de Água: ");
+  Serial.println(NivelAgua);
+
+  // Publica os valores no MQTT
+  char payloadAgua[10];
+  char payloadChuva[10];
+  snprintf(payloadAgua, sizeof(payloadAgua), "%d", NivelAgua);
+  snprintf(payloadChuva, sizeof(payloadChuva), "%d", Chuva);
+
+  client.publish("projeto/nivelagua", payloadAgua);
+  client.publish("projeto/chuva", payloadChuva);
+
+  // Acende LED só se o valor de Nível de Água passar de 75
+  if (NivelAgua > 75) {
+    digitalWrite(LED, HIGH);
+  } else {
+    digitalWrite(LED, LOW);
+  }
+
+  client.loop();
+  delay(1000);
+}
+
+void callback(String topic, byte* payload, unsigned int length) {
+  Serial.println();
+  Serial.print("Mensagem recebida no tópico: ");
+  Serial.println(topic);
+  Serial.println("Mensagem: ");
+
+  String msg;
+  for (int i = 0; i < length; i++) {
+    msg += (char)payload[i];
+  }
+  Serial.println(msg);
+
+  if (topic == "LED") {
+    if (msg == "ON") {
+      digitalWrite(LED, HIGH);
+      Serial.println("LED via MQTT: ON");
+    } else if (msg == "OFF") {
+      digitalWrite(LED, LOW);
+      Serial.println("LED via MQTT: OFF");
+    }
+  }
+  Serial.println();
+}
