@@ -44,11 +44,12 @@ Essa abordagem foi escolhida para ilustrar de forma didática e funcional como u
 ### Node-RED
 
 1. Abra o CMD e digite ```node-red ```
-1. Importe o fluxo do arquivo `flow_node_red.json`
+2. Abra local  ```http://localhost:1880```
+. Importe o fluxo do arquivo `flow_node_red.json`
 2. Configure o broker MQTT (exemplo usado: test.mosquitto.org)
 3. Utilize a porta 1883
 4. Rode o projeto no Node-RED
-5. Abra o dashboard para visualizar os dados e receber alertas
+5. Abra o dashboard ```http://localhost:1880/ui/``` para visualizar os dados e receber alertas
 
 ## Fluxo Node-RED
 
