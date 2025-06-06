@@ -93,7 +93,7 @@ Essa abordagem foi escolhida para ilustrar de forma didática e funcional como u
    - Serve como base para sistemas reais de alerta em situações de risco como enchentes.
    - Pode ser expandido para outros sensores e atuadores, aumentando a segurança e automação.
 
-## ⚙️ Arquitetura do Sistema
+## Arquitetura do Sistema
 
 ![Diagrama de Arquitetura do Projeto](https://github.com/SafeRoute-2025/SAFE-ROUTE-IoT/raw/main/imgs/arquitetura_projeto.png)
 
