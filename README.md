@@ -32,6 +32,12 @@ Essa abordagem foi escolhida para ilustrar de forma didática e funcional como u
 - RM553748 Mauricio Vieira Pereira - 2TDSPC
 - RM553483 Vitor de Melo Marques - 2TDSPR
 
+## Link do vídeo 
+
+Link do vídeo explicando a solução e mostrando o funcionamneto da solução.
+
+- https://youtu.be/FIq3crhJuA0
+
 ## Tecnologias Utilizadas 
 
 - Wokwi (Simulador de Arduino/ESP32)
@@ -92,10 +98,6 @@ Essa abordagem foi escolhida para ilustrar de forma didática e funcional como u
    - O sistema simula a detecção de condições críticas em tempo real.
    - Serve como base para sistemas reais de alerta em situações de risco como enchentes.
    - Pode ser expandido para outros sensores e atuadores, aumentando a segurança e automação.
-
-## Link do vídeo 
-
-https://youtu.be/FIq3crhJuA0
 
 ## Arquitetura do Sistema
 
